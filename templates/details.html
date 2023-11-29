@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block title %}
+    Details For {{ customer.first_name | capfirst }}
+{% endblock %}
+
+{% block content %}
+    {% include 'navbar.html' %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-6 text-center">
+                {% include 'alert.html' %}
+                {% if customer.profile_pic %}
+                    <img src="{{ customer.profile_pic.url }}" class="img-fluid" alt="">
+                {% endif %}
+                <h3>{{ customer.first_name | capfirst }} {{ student.last_name | capfirst }}</h3>
+                <p>Added On {{ customer.created_at | naturaltime }}</p>
+
+
+                {% if perms.main_app.delete_customer %}
+                    <a href="{% url 'delete' customer.id %}" class="btn btn-danger w-50">Delete</a>
+                {% endif %}
+
+                {% if perms.main_app.change_customer %}
+                    <a href="{% url 'update' customer.id %}" class="btn btn-danger">Update</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
