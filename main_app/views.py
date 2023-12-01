@@ -106,8 +106,8 @@ def signin(request):
 
 
 def signout(request):
-    messages.success(request, "You have logged out!")
-    logout(request)  # will kill all the sessions and cookies
+    messages.success(request, "You are logged out!")
+    logout(request)
     return redirect('login')
 
 # editor user 123456 will have all the powers

@@ -13,7 +13,7 @@
                 {% if customer.profile_pic %}
                     <img src="{{ customer.profile_pic.url }}" class="img-fluid" alt="">
                 {% endif %}
-                <h3>{{ customer.first_name | capfirst }} {{ student.last_name | capfirst }}</h3>
+                <h3>{{ customer.first_name | capfirst }} {{ customer.last_name | capfirst }}</h3>
                 <p>Added On {{ customer.created_at | naturaltime }}</p>
 
 

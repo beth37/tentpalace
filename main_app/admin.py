@@ -4,7 +4,7 @@ from main_app.models import Customer
 
 
 # Register your models here.
-admin.site.site_header = "St Anthony High School"
+admin.site.site_header = "Tent Palace"
 
 
 
